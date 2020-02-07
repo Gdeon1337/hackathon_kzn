@@ -1,4 +1,4 @@
-# accounting_python
+# template_sanic
 
 in system
   *     python3.7 -m venv .venv
