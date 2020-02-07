@@ -14,12 +14,13 @@ app_name = poetry_info["name"].lower()
 service_name = f'{app_name}'
 
 default_ip = 'localhost'
+default_redis_conn = 'redis://localhost:6379/1'
 
 
 class Config(EnvConfig):
     SERVER_IP: str = default_ip
     SERVER_PORT: int = 80
-    REDIS_CONNECTION: str = 'redis://localhost:6379/1'
+    REDIS_CONNECTION: str = default_redis_conn
 
     APP_DIR: str = app_dir
     PROJECT_ROOT: str = project_root
