@@ -1,7 +1,6 @@
 from sanic import Sanic
 
-from . import config
-from . import extensions
+from . import config, extensions
 from .blueprints import blueprint, blueprint_exceptions
 
 

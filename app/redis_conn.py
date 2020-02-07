@@ -44,6 +44,9 @@ class RedisConn:
             await self.connect()
         try:
             await self.conn.ping()
-        except ConnectionClosedError or AttributeError:
+        except ConnectionClosedError:
+            self.conn = None
+            raise ConnectionClosedError("Redis conn disconnected")
+        except AttributeError:
             self.conn = None
             raise ConnectionClosedError("Redis conn disconnected")
