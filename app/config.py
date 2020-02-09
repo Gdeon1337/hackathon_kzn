@@ -21,15 +21,19 @@ class Config(EnvConfig):
     SERVER_IP: str = default_ip
     SERVER_PORT: int = 80
     REDIS_CONNECTION: str = default_redis_conn
-
+    PG_CONNECTION: str = None
     APP_DIR: str = app_dir
     PROJECT_ROOT: str = project_root
 
     IS_DOCKER: bool = False
-
+    DEBUG: bool = False
     APP_NAME: str = app_name
     SERVICE_NAME: str = service_name
     API_TITLE: str = service_name.title()
     API_VERSION: str = poetry_info['version']
     API_DESCRIPTION: str = poetry_info['description']
     API_SCHEMES: Tuple[str] = ('http', 'https')
+    CORS_AUTOMATIC_OPTIONS: bool = True
+    CORS_SUPPORTS_CREDENTIALS: bool = True
+    CORS_ORIGINS: Tuple[str] = ('.*',)
+    CORS_SEND_WILDCARD: bool = False
